@@ -1,0 +1,822 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nexapvp</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech&amp;display=swap" rel="stylesheet"/>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Share Tech', sans-serif;
+    background: linear-gradient(to bottom right, #0a001a, #210033);
+    color: #ccc;
+    overflow-x: hidden;
+  }
+  nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+  nav .logo img {
+    height: 30px;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding-left: 20px;
+  }
+  nav ul li {
+    display: inline;
+    font-size: 1.6em;
+  }
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  .section {
+    text-align: center;
+    padding: 120px 20px 80px;
+  }
+  .hero h1 {
+    font-size: 8rem;
+    letter-spacing: 0.1em;
+    color: #fff;
+    
+    
+  }
+  .hero p {
+    opacity: 0.6;
+    margin-top: 0.5rem;
+    font-size: 1.8rem;
+  }
+  .logo-img {
+    width: 500px;
+    height: auto;
+    display: block;
+    margin: 110px auto 0 auto;
+    filter: drop-shadow(0 0 20px #a200ff);
+  }
+  @keyframes glow_removed {
+    from {
+      text-shadow: 0 0 10px #a200ff, 0 0 20px #a200ff;
+    }
+    to {
+      text-shadow: 0 0 20px #ffffff, 0 0 40px #a200ff;
+    }
+  }
+  .features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 40px;
+  }
+  .feature-image img {
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #a200ff;
+  }
+  .feature-content {
+    text-align: left;
+    max-width: 500px;
+  }
+  .feature-box {
+    margin-bottom: 30px;
+  }
+  .feature-box h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  .feature-box p {
+    font-size: 1.2rem;
+    color: #ccc;
+  }
+  .logo-rain {
+    position: fixed;
+    top: -100px;
+    pointer-events: none;
+    width: 60px;
+    opacity: 0.9;
+    z-index: 9999;
+    animation: fall 5s linear infinite;
+  }
+  @keyframes fall {
+    0% { transform: translateY(-100px) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+  }
+</style>
+<link href="https://unpkg.com/phosphor-icons" rel="stylesheet"/><script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script><style>
+  :root {
+    --bg: #0d001a;
+    --primary: #8e44ec;
+    --text: rgba(255, 255, 255, 0.85);
+    --muted: rgba(255, 255, 255, 0.6);
+  }
+  .plain-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 3rem;
+    backdrop-filter: blur(12px);
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  }
+  .status-circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+  }
+</style><link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&amp;display=swap" rel="stylesheet"/><style>* { font-family: 'Exo 2', sans-serif !important; }</style><style>
+  .shop-chart {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    margin: 30px auto;
+    max-width: 900px;
+    background-color: #1a0033;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #a200ff;
+  }
+  .shop-chart img {
+    max-width: 60px;
+    border-radius: 8px;
+  }
+  .shop-chart-header {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #b366ff;
+    margin-bottom: 10px;
+  }
+</style><style>
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 300px;
+
+  display: inline-block;
+  padding: 30px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #1a0033, #29004d);
+}
+}</style><style>
+@keyframes pulse-glow {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px #a200ff);
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px #ffffff) drop-shadow(0 0 40px #a200ff);
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px #a200ff);
+  }
+}
+.logo-img:hover {
+  animation: pulse-glow 1.2s ease-in-out infinite;
+}
+</style><style>
+.firework {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: hsl(calc(360 * var(--hue)), 100%, 60%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: explode 0.9s ease-out forwards;
+  z-index: 9999;
+  background: #a200ff;
+}
+@keyframes explode {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), var(--dy)) scale(0.5);
+    opacity: 0;
+  }
+}
+</style><style>
+.purchase-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 14px 28px;
+  background-color: #b366ff;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 0 12px #a200ff;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.purchase-btn:hover {
+  background-color: #d299ff;
+  color: black;
+  transform: scale(1.05);
+}
+</style><style>
+.faq-intro {
+  background: #1a0033;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #8e44ec;
+  margin-top: 20px;
+  color: #eee;
+}
+.faq-intro h3 {
+  color: #b366ff;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.faq-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+.faq-list li {
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+}
+</style><style>
+.section h2 {
+  font-size: 3rem;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px #a200ff, 0 0 20px #a200ff;
+  padding-bottom: 10px;
+}
+.section h2::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #a200ff, #ffffff, #a200ff);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+</style><style>
+#contact {
+  background: #1a0033;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #8e44ec;
+  margin-top: 40px;
+  color: #eee;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#contact h2 {
+  color: #b366ff;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+#contact a {
+  color: #b366ff;
+  text-decoration: underline;
+}
+#contact a:hover {
+  color: #d299ff;
+}
+</style><style>
+#staff {
+  background: #1a0033;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #8e44ec;
+  margin-top: 60px;
+  color: #eee;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-items: center;
+
+  display: flex;
+  
+  
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.staff-card {
+  background-color: #210033;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 0 10px #a200ff;
+  width: 160px;
+}
+.staff-card img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #8e44ec;
+}
+.staff-card p {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: #b366ff;
+  font-weight: bold;
+}
+
+.staff-card:hover {
+  transform: scale(1.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 25px #ffffff, 0 0 40px #a200ff;
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-items: center;
+
+  
+  
+  
+}
+</style><style>
+.staff-role {
+  font-size: 1rem;
+  color: #ccc;
+  margin-top: 4px;
+  font-style: italic;
+}
+</style><style>
+.firework {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: hsl(calc(360 * var(--hue)), 100%, 60%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: explode 0.9s ease-out forwards;
+  z-index: 9999;
+  background: #a200ff;
+}
+@keyframes explode {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), var(--dy)) scale(0.5);
+    opacity: 0;
+  }
+}
+</style><style>
+#report {
+  background: #1a0033;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #8e44ec;
+  margin-top: 80px;
+  color: #eee;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.report-forum-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.report-box, .forum-box {
+  background: #210033;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 10px #a200ff;
+}
+.report-box h3, .forum-box h3 {
+  color: #b366ff;
+}
+.report-button, .forum-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 12px 24px;
+  background: #b366ff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+.report-button:hover, .forum-button:hover {
+  background: #d299ff;
+  color: #000;
+}
+</style><style>
+nav ul li a {
+  font-size: 0.95rem;
+  padding: 8px 12px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+nav ul li a:hover {
+  color: #b366ff;
+  transform: scale(1.1);
+}
+</style><style>
+a.button, .purchase-btn, .pricing-btn, .report-button, .forum-button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+a.button:hover, .purchase-btn:hover, .pricing-btn:hover, .report-button:hover, .forum-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #b366ff, 0 0 18px #a200ff;
+}
+</style><style>
+#rules li:hover {
+  color: #b366ff;
+  transition: color 0.3s ease;
+}
+</style>
+<style>
+  .hover-pop {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .hover-pop:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px var(--primary), 0 0 40px var(--primary);
+    z-index: 10;
+  }
+</style>
+<style>
+  body::before {
+    content: "";
+    background: url('https://i.postimg.cc/kG6byw5X/1346085.png') no-repeat center center fixed;
+    background-size: cover;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.3;
+    z-index: -1;
+  }
+</style>
+</head>
+<body>
+<nav id="mainNav" style="; transition: top 0.3s; background-size: 90% auto;">
+<div class="logo">
+<img alt="Nexapvp Logo" id="main-logo" src="https://i.postimg.cc/Pr4xWGLc/29bc7579-c73a-46ef-825f-9458455f6df3-removalai-preview.png"/>
+</div>
+<ul style="padding-left: 0; margin-left: -20px;">
+<li><a href="#rules">Rules</a></li><li><a href="#contact">Contact Us</a></li><li><a href="#report">Report / Forums</a></li><li><a href="#about">About</a></li><li><a href="https://discord.com/channels/1388387778676527194/1389958926606536724">📢 Updates</a></li>
+<li><a href="#players">Players</a></li>
+<li><a href="#shop">Shop</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+</nav>
+<section class="section hero" style=" margin-top: 80px;">
+<h1 style="margin-top: -40px; color: #fff; font-size: 8rem; letter-spacing: 0.1em;">Welcome to Nexapvp</h1>
+<img alt="Logo" class="logo-img" src="https://i.postimg.cc/yYdm3TxF/Chat-GPT-Image-Jun-30-2025-09-15-40-AM.png" style="border-radius: 20px;"/><p style="margin-top: 80px; font-size: 1.8rem; opacity: 0.6;">A high-end, luxury Minecraft experience built for elite players</p>
+</section>
+<section class="section hover-pop" id="players" style="padding: 2rem; border-radius: 12px; box-shadow: 0 0 20px #a200ff; margin-top: 20px; color: #eee; max-width: 800px; margin-left: auto; margin-right: auto;"><div class="plain-card" id="player-count" style="padding: 1.5rem; border-radius: 10px; background: none; box-shadow: none; color: #fff; max-width: 500px; margin: 0 auto; padding: 1rem; font-size: 0.95rem; backdrop-filter: blur(10px); background-color: rgba(0, 0, 0, 0.3); border-radius: 12px;">
+<div style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;">
+<i class="ph-users"></i>
+</div>
+<div style="font-size: 3rem; font-weight: bold; color: #fff;">
+<span>{{ playerCount }}</span>
+</div>
+<p style="color: var(--muted); font-size: 1.1rem; margin-top: 0.5rem;">Players Currently Online</p>
+<p style="margin-top: 1rem; color: #27ae60; font-size: 0.95rem;" v-if="serverOnline">
+<span class="status-circle" style="background: #27ae60;"></span> Server Online
+    </p>
+<p style="margin-top: 1rem; color: #e74c3c; font-size: 0.95rem;" v-else="">
+<span class="status-circle" style="background: #e74c3c;"></span> Server Offline
+    </p>
+</div></section><section class="section hover-pop" id="about" style="background: #1a0033; padding: 2rem; border-radius: 12px; box-shadow: 0 0 15px #8e44ec; margin-top: 80px; color: #eee; max-width: 1000px; margin-left: auto; margin-right: auto;">
+<h2 style="margin-bottom: 10px;">ℹ️ About Us</h2>
+<section class="features" style=" margin-top: 80px;">
+<div class="feature-image">
+<img alt="Feature Preview" src="https://i.postimg.cc/yYdm3TxF/Chat-GPT-Image-Jun-30-2025-09-15-40-AM.png"/>
+</div>
+<div class="feature-content">
+<div class="feature-box">
+<h3>BEDWARS</h3>
+<p>Better ping Better Plugins Just better</p>
+</div>
+<div class="feature-box">
+<h3>Live Streaming</h3>
+<p>Integration with streaming platforms for live esports coverage.</p>
+</div>
+<div class="feature-box">
+<h3>Gaming News</h3>
+<p>Keep players informed with the latest updates from the Minecraft scene.</p>
+</div>
+</div>
+</section>
+</section>
+<section class="section" id="rules" style=" margin-top: 80px;"><h2>📜 Rules</h2><div class="hover-pop" style="background: rgba(0, 0, 0, 0.3);backdrop-filter: blur(10px);padding: 2rem;border-radius: 12px;box-shadow: 0 0 20px #8e44ec;max-width: 800px;margin: 0 auto;"><ul style="max-width: 700px; margin: auto; text-align: left; font-size: 1.2rem;"><li>1. Be respectful to all players and staff.</li><li>2. No cheating, hacking, or exploiting bugs.</li><li>3. No spamming, advertising, or inappropriate content.</li><li>4. Keep chat friendly and appropriate.</li><li>5. Follow staff instructions at all times.</li><li>6. Use common sense and play fair.</li></ul></div></section>
+<section class="section hover-pop" id="shop" style="background: #1a0033; padding: 2rem; border-radius: 12px; box-shadow: 0 0 15px #8e44ec; margin-top: 80px; color: #eee; max-width: 1000px; margin-left: auto; margin-right: auto;">
+<h2>🛒 Shop</h2>
+<div style="margin: 40px 0;">
+<label for="rank-select" style="font-size: 1.3em; font-weight: 600; color: #b366ff;">Select Your Rank:</label>
+<select class="form-control" id="rank-select" name="rank" required="">
+<option value="">-- Choose a Rank --</option>
+<option value="vip">VIP Rank - $4.99</option>
+<option value="elite">Elite Rank - $4.99</option>
+<option value="platinum">Platinum Rank - $9.99</option>
+</select>
+</div><div class="th-cart-wrapper space-top space-extra-bottom">
+<form class="woocommerce-cart-form"><div class="shop-chart"><div class="shop-chart-header">Image</div><div class="shop-chart-header">Product Name</div><div class="shop-chart-header">Price</div><div class="shop-chart-header">Quantity</div><div class="shop-chart-header">Total</div><div class="shop-chart-header">Remove</div><img alt="Rank Icon" src="https://i.postimg.cc/Pr4xWGLc/29bc7579-c73a-46ef-825f-9458455f6df3-removalai-preview.png"/><div>VIP Rank</div><div>$4.99</div><div>1</div><div>$4.99</div><div>🗑️</div><img alt="Rank Icon" src="https://i.postimg.cc/Pr4xWGLc/29bc7579-c73a-46ef-825f-9458455f6df3-removalai-preview.png"/><div>Elite Rank</div><div>$4.99</div><div>1</div><div>$9.99</div><div>🗑️</div><img alt="Rank Icon" src="https://i.postimg.cc/Pr4xWGLc/29bc7579-c73a-46ef-825f-9458455f6df3-removalai-preview.png"/><div>Platinum Rank</div><div>$9.99</div><div>1</div><div>$19.99</div><div>🗑️</div></div>
+<div class="th-cart-coupon" style="margin: 20px 0;">
+<input class="form-control" placeholder="Coupon Code..." type="text"/>
+<button class="th-btn" type="submit">Apply Coupon</button>
+<button class="th-btn" type="submit">Update cart</button>
+<button class="th-btn" type="submit">Continue Shopping</button>
+</div>
+</form>
+</div><a class="purchase-btn" href="#pricing">Purchase Order</a></section>
+<section class="section" id="pricing" style="margin-top: 80px;">
+<h2>🎖️ Choose Your Rank</h2>
+<p style="text-align:center; font-size:1.2rem; color: #ccc;">Unlock premium features and exclusive content</p>
+<div class="pricing-section" style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-top:40px;">
+<div class="pricing-card hover-pop" style="background:#1a0033; border:2px solid #b366ff; border-radius:16px; padding:2rem; max-width:300px; text-align:center; box-shadow:0 0 20px #8e44ec;">
+<h3>🌟 VIP</h3>
+<div class="pricing-price" style="font-size:2rem; font-weight:bold; color:#fff;">$4.99</div>
+<ul style="list-style:none; padding:0; color:#ccc; text-align:left;">
+<li>• Priority server access</li>
+<li>• Exclusive VIP chat color</li>
+<li>• Weekly bonus rewards</li>
+<li>• Access to VIP-only areas</li>
+<li>• Custom player prefix</li>
+</ul>
+<a class="pricing-btn" href="https://discord.com/channels/1388387778676527194/1389923252603715635" style="background:#b366ff; color:#fff; border:none; padding:12px 24px; border-radius:8px; margin-top:1rem; display:inline-block;">Choose VIP</a>
+</div>
+<div class="pricing-card hover-pop" style="background:#1a0033; border:2px solid #b366ff; border-radius:16px; padding:2rem; max-width:300px; text-align:center; box-shadow:0 0 20px #8e44ec;">
+<h3>👑 Elite</h3>
+<div class="pricing-price" style="font-size:2rem; font-weight:bold; color:#fff;">$9.99</div>
+<ul style="list-style:none; padding:0; color:#ccc; text-align:left;">
+<li>• Everything in VIP</li>
+<li>• Double XP and rewards</li>
+<li>• Exclusive Elite dungeons</li>
+<li>• Custom cosmetic items</li>
+<li>• Priority support</li>
+<li>• Monthly exclusive events</li>
+</ul>
+<a class="pricing-btn" href="https://discord.com/channels/1388387778676527194/1389923283146903693" style="background:#b366ff; color:#fff; border:none; padding:12px 24px; border-radius:8px; margin-top:1rem; display:inline-block;">Choose Elite</a>
+</div>
+<div class="pricing-card hover-pop" style="background:#1a0033; border:2px solid #b366ff; border-radius:16px; padding:2rem; max-width:300px; text-align:center; box-shadow:0 0 20px #8e44ec;">
+<h3>💎 Platinum</h3>
+<div class="pricing-price" style="font-size:2rem; font-weight:bold; color:#fff;">$19.99</div>
+<ul style="list-style:none; padding:0; color:#ccc; text-align:left;">
+<li>• Everything in Elite</li>
+<li>• Unlimited home teleports</li>
+<li>• Exclusive Platinum realm</li>
+<li>• Custom particle effects</li>
+<li>• Beta feature access</li>
+<li>• Direct developer contact</li>
+<li>• Monthly premium gifts</li>
+</ul>
+<a class="pricing-btn" href="https://discord.com/channels/1388387778676527194/1389923321818251314" style="background:#b366ff; color:#fff; border:none; padding:12px 24px; border-radius:8px; margin-top:1rem; display:inline-block;">Choose Platinum</a>
+</div>
+</div>
+</section>
+<section class="section hover-pop" id="faq" style="background: #1a0033; padding: 2rem; border-radius: 12px; box-shadow: 0 0 15px #8e44ec; margin-top: 80px; color: #eee; max-width: 1000px; margin-left: auto; margin-right: auto;">
+<h2>❓ FAQ</h2>
+<div class="faq-intro">
+<h3>Welcome to NexaPvp!</h3>
+<p>Your new home for Minecraft, Bedwars, and chill chats with a competitive edge!</p>
+<ul class="faq-list">
+<li>🔹 <strong>Animated_Verifie:</strong> Smooth and secure verification</li>
+<li>🔹 <strong>Intense Bedwars &amp; PvP Tournaments!</strong></li>
+<li>🔹 <strong>Friendly &amp; Competitive Community!</strong></li>
+<li>🔹 <strong>Exclusive YouTube &amp; Server Content!</strong></li>
+<li>🔹 <strong>Daily Fun, Voice Chats, and Events!</strong></li>
+</ul>
+<p style="font-size: 1.3rem; margin-top: 1rem;">💖 Join NexaPvp Today 💖</p>
+</div>
+</section><section class="section" id="staff" style=" margin-top: 80px;"><h2 style="margin-bottom: 10px;">🛡️ Staff</h2><div class="staff-grid"><div class="staff-card"><img alt="AkainPlayz" src="https://i.postimg.cc/HxFC6ZNj/bddc6db2023e4caee8f756c62c4f4db1.jpg"/><p>AkainPlayz</p><p class="staff-role">Owner</p></div><div class="staff-card"><img alt="EnterAltBreak" src="https://i.postimg.cc/CLY2wpbS/d4d5fefcfbf324b66c8f42523138c3c6.png"/><p>EnterAltBreak</p><p class="staff-role">Owner</p></div><div class="staff-card"><img alt="Glichwasdead" src="https://i.postimg.cc/brHS8tk0/Drawing-1-sketchpad.png"/><p>Glichwasdead</p><p class="staff-role">Owner</p></div><div class="staff-card"><img alt="Pabasara" src="https://i.postimg.cc/1t7zsrjZ/59d916f25a7b13fd4bae0e7c59b76661.gif"/><p>Pabasara</p><p class="staff-role">Manager</p></div><div class="staff-card"><img alt="Bui" src="https://i.postimg.cc/G2Fjf97Y/a-95d126151bcc07e989ccdc4ef269c49b.gif"/><p>Bui</p><p class="staff-role">Manager</p></div><div class="staff-card"><img alt="Sasandara" src="https://i.postimg.cc/FRYYf6cK/d84bb6b45eab1713728e18c95e8b4061.png"/><p>Sasandara</p><p class="staff-role">Developer</p></div></div></section><section class="section hover-pop" id="report"><h2 style="margin-bottom: 10px;">📢 Report / Forums</h2>
+<div class="report-forum-grid">
+<div class="report-box">
+<h3>📩 Report an Issue</h3>
+<p>If you've encountered a bug or want to report a rule violation, click below:</p>
+<a class="report-button" href="https://discord.com/channels/1388387778676527194/1389919460487331920" target="_blank">📨 Report</a>
+</div>
+<div class="forum-box">
+<h3>💬 Forums</h3>
+<p>Join our community forums to discuss ideas, strategies, or get support:</p>
+<a class="forum-button" href="https://discord.com/channels/1388387778676527194/1389919131905560626" target="_blank">💡 Forums</a>
+</div>
+</div>
+</section><section class="section hover-pop" id="updates" style="background: #1a0033; padding: 2rem; border-radius: 12px; box-shadow: 0 0 15px #8e44ec; margin-top: 80px; color: #eee; max-width: 1000px; margin-left: auto; margin-right: auto;">
+<h2>📢 Updates</h2>
+<ul style="list-style: none; padding-left: 0; font-size: 1.2rem;">
+<li>✅ New cosmetics added for VIP+ ranks</li>
+<li>🔥 Elite dungeon mechanics rebalanced</li>
+<li>⚒️ Bug fixes for PvP lag and teleporting</li>
+<li>🎉 Upcoming tournament announcement soon!</li>
+</ul>
+</section><section class="section hover-pop" id="contact" style="margin-top: 80px; margin-bottom: 80px;"><h2>📞 Contact Us</h2>
+<div style="max-width: 700px; margin: auto; color: #ccc; font-size: 1.2rem; text-align: center;">
+<p>We’d love to hear from you! Whether it's feedback, support, or partnership inquiries—reach out below:</p>
+<p>Email: contactnexapvp@gmail.com</p>
+<p><strong>Discord:</strong> <a href="https://discord.gg/zYNhC7ZAdc" style="color:#b366ff;" target="_blank">https://discord.gg/zYNhC7ZAdc</a></p>
+<p><strong>Location:</strong> Colombo, Western Province, Sri Lanka</p>
+</div>
+</section>
+<script>
+  document.getElementById("main-logo").addEventListener("click", () => {
+    for (let i = 0; i < 30; i++) {
+      const img = document.createElement("img");
+      img.src = "https://i.postimg.cc/g047k7cT/output-onlinepngtools-2.png";
+      img.className = "logo-rain";
+      img.style.left = Math.random() * 100 + "vw";
+      img.style.animationDuration = 3 + Math.random() * 2 + "s";
+      document.body.appendChild(img);
+      setTimeout(() => img.remove(), 6000);
+    }
+  });
+</script>
+<script>
+  const { createApp } = Vue;
+
+  createApp({
+    data() {
+      return {
+        playerCount: '—',
+        serverOnline: false
+      };
+    },
+    methods: {
+      fetchPlayerCount() {
+        fetch('https://api.mcsrvstat.us/2/play.nexapvp.net')
+          .then(res => res.json())
+          .then(data => {
+            if (data.online) {
+              this.serverOnline = true;
+              this.playerCount = data.players.online;
+            } else {
+              this.serverOnline = false;
+              this.playerCount = '0';
+            }
+          })
+          .catch(() => {
+            this.serverOnline = false;
+            this.playerCount = '0';
+          });
+      }
+    },
+    mounted() {
+      this.fetchPlayerCount();
+      setInterval(this.fetchPlayerCount, 30000); // update every 30s
+    }
+  }).mount('#player-count');
+</script><script>
+let lastScrollTop = 0;
+const nav = document.getElementById("mainNav");
+
+window.addEventListener("scroll", function () {
+  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  if (currentScroll > lastScrollTop) {
+    nav.style.top = "-100px"; // Hide nav
+  } else {
+    nav.style.top = "0"; // Show nav
+  }
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
+</script><script>
+function createFirework(x, y) {
+  for (let i = 0; i < 30; i++) {
+    const particle = document.createElement("div");
+    particle.className = "firework";
+    document.body.appendChild(particle);
+    const angle = Math.random() * 2 * Math.PI;
+    const radius = Math.random() * 100;
+    const dx = Math.cos(angle) * radius;
+    const dy = Math.sin(angle) * radius;
+    particle.style.left = x + "px";
+    particle.style.top = y + "px";
+    particle.style.setProperty('--dx', dx + "px");
+    particle.style.setProperty('--dy', dy + "px");
+    setTimeout(() => particle.remove(), 1000);
+  }
+}
+
+document.querySelectorAll('.staff-card').forEach(card => {
+  card.addEventListener('click', e => {
+    const x = e.clientX;
+    const y = e.clientY;
+    createFirework(x, y);
+  });
+});
+</script><script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<div id="theme-toggler" style="position:fixed;top:50%;right:10px;transform:translateY(-50%);z-index:9999;">
+<button onclick="document.getElementById('theme-options').classList.toggle('show')" style="background:#b366ff;border:none;color:white;padding:14px 18px;border-radius:10px;cursor:pointer;box-shadow:0 0 12px #a200ff;font-size:1.6rem;">🎨</button>
+<div id="theme-options" style="display:none;flex-direction:column;gap:8px;margin-top:10px;background:#1a0033;padding:10px;border-radius:8px;box-shadow:0 0 10px #8e44ec;">
+<button onclick="setTheme('purple')" style="background:#a200ff;color:white;padding:6px;border:none;border-radius:6px;cursor:pointer;">Purple</button>
+<button onclick="setTheme('red')" style="background:#ff4d4d;color:white;padding:6px;border:none;border-radius:6px;cursor:pointer;">Red</button>
+<button onclick="setTheme('blue')" style="background:#00bfff;color:white;padding:6px;border:none;border-radius:6px;cursor:pointer;">Light Blue</button>
+<button onclick="setTheme('green')" style="background:#32cd32;color:white;padding:6px;border:none;border-radius:6px;cursor:pointer;">Green</button>
+</div>
+</div>
+<style>
+  #theme-options.show { display: flex !important; }
+</style>
+<script>
+  function setTheme(color) {
+    let root = document.documentElement;
+    switch(color) {
+      case 'purple':
+        root.style.setProperty('--primary', '#8e44ec');
+        root.style.setProperty('--bg', '#0d001a');
+        break;
+      case 'red':
+        root.style.setProperty('--primary', '#e74c3c');
+        root.style.setProperty('--bg', '#1a0000');
+        break;
+      case 'blue':
+        root.style.setProperty('--primary', '#00bfff');
+        root.style.setProperty('--bg', '#001a33');
+        break;
+      case 'green':
+        root.style.setProperty('--primary', '#32cd32');
+        root.style.setProperty('--bg', '#001a00');
+        break;
+    }
+    document.body.style.background = `linear-gradient(to bottom right, var(--bg), black)`;
+    document.querySelectorAll('.pricing-card, #contact, #shop, #faq, #report, #rules, #about, #players').forEach(el => {
+      el.style.boxShadow = `0 0 20px var(--primary)`;
+    });
+  }
+</script>
+<script>
+function createBackgroundFireworks() {
+  for (let i = 0; i < 40; i++) {
+    const particle = document.createElement("div");
+    particle.className = "firework";
+    document.body.appendChild(particle);
+    const angle = Math.random() * 2 * Math.PI;
+    const radius = Math.random() * 250;
+    const dx = Math.cos(angle) * radius;
+    const dy = Math.sin(angle) * radius;
+    particle.style.left = (window.innerWidth / 2) + "px";
+    particle.style.top = (window.innerHeight / 2) + "px";
+    particle.style.setProperty('--dx', dx + "px");
+    particle.style.setProperty('--dy', dy + "px");
+    setTimeout(() => particle.remove(), 1000);
+  }
+}
+
+document.querySelector(".logo-img").addEventListener("click", () => {
+  createBackgroundFireworks();
+});
+</script>
+
+<script>
+function createBackgroundFireworks() {
+  for (let i = 0; i < 40; i++) {
+    const particle = document.createElement("div");
+    particle.className = "firework";
+    document.body.appendChild(particle);
+    const angle = Math.random() * 2 * Math.PI;
+    const radius = Math.random() * 250;
+    const dx = Math.cos(angle) * radius;
+    const dy = Math.sin(angle) * radius;
+    particle.style.left = (window.innerWidth / 2) + "px";
+    particle.style.top = (window.innerHeight / 2) + "px";
+    particle.style.setProperty('--dx', dx + "px");
+    particle.style.setProperty('--dy', dy + "px");
+    setTimeout(() => particle.remove(), 1000);
+  }
+}
+</script>
+</body>
+</html>
